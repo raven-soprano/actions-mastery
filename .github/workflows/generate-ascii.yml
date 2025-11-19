@@ -4,7 +4,7 @@ on:  push
 jobs: 
     first_job: 
         runs-on: ubuntu-latest
-         steps: 
+        steps: 
         - name: checkout repo 
           uses: actions/checkout@v5
 
@@ -13,25 +13,12 @@ jobs:
             echo "my first Github actions job"
             ls -ltr
             cat "README.md"
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
         - name: generate ASCII diagram 
           run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
 
         - name: permission to display file 
-          run: | 
-        #  chmod +x dragon.txt
-           cat "dragon.txt" 
+          run: cat "dragon.txt" 
 
-        # - name: welcome message 
-        #   run: echo "my first Github actions job"
-        
-        # - name: move README file
-        #   run: mv README.md > msg.txt 
-        
-        # - name: give msg.txt permissions 
-        #   run: chmod +x msg.txt 
-
-        # - name: list files 
-        #   run: ls -ltr
-
-        # - name: Read files 
-        #   run: cat "README.md"
+       
