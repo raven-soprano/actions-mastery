@@ -23,6 +23,7 @@ jobs:
         #     cat "README.md"
         
   execute_repo:
+    needs: list_repo 
     runs-on: ubuntu-latest 
     steps:
      - name: executing shell script
