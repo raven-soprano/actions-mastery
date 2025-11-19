@@ -8,13 +8,13 @@ jobs:
         - name: checkout repo 
           uses: actions/checkout@v5
 
-        - name: List and Read files 
-          run: | 
-            echo "my first Github actions job"
-            ls -ltr
-            cat "README.md"
+        # - name: List and Read files 
+        #   run: | 
+        #     echo "my first Github actions job"
+        #     ls -ltr
+        #     cat "README.md"
 
-        - name: install Cowsay program
+        - name: Install Cowsay program
           run: sudo apt-get install cowsay -y
 
         - name: generate ASCII diagram 
@@ -25,5 +25,8 @@ jobs:
 
         - name: permission to display file 
           run: cat dragon.txt
+        
+        - name: list repo files 
+          run: ls -ltra
 
        
