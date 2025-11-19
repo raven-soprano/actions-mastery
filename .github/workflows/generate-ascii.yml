@@ -32,17 +32,16 @@ jobs:
         #     ls -ltr
         #     cat "README.md"
         
-  execute_repo:
-    needs: list_repo 
-    runs-on: ubuntu-latest 
-    steps:
-
-    - name: sleep for 10 secs
-      run: sleep 10
+  deploy_job:
+      needs: list_repo 
+      runs-on: ubuntu-latest 
+      steps:
+      - name: sleep for 10 secs
+        run: sleep 10
   
 
-    - name: read file
-      run: cat dragon.txt
+      - name: read file
+        run: cat dragon.txt
 
    
    
