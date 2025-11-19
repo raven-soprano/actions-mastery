@@ -1,37 +1,37 @@
-# name: my First workflow 
+name: my First workflow 
 
-# on:  push 
-# jobs: 
-#     first_job: 
-#         runs-on: ubuntu-latest
-#         steps: 
-#         - name: checkout repo 
-#           uses: actions/checkout@v5
+on:  push 
+jobs: 
+    first_job: 
+        runs-on: ubuntu-latest
+        steps: 
+        - name: checkout repo 
+          uses: actions/checkout@v5
 
-#         - name: List and Read files 
-#           run: | 
-#             echo "my first Github actions job"
-#             ls -ltr
-#             cat "README.md"
-#         - name: generate ASCII diagram 
-#           run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
+        - name: List and Read files 
+          run: | 
+            echo "my first Github actions job"
+            ls -ltr
+            cat "README.md"
+        - name: generate ASCII diagram 
+          run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
 
-#         - name: permission to display file 
-#           run: | 
+        - name: permission to display file 
+          run: | 
         
-#            cat "dragon.txt" 
+           cat "dragon.txt" 
 
-#         # - name: welcome message 
-#         #   run: echo "my first Github actions job"
+        # - name: welcome message 
+        #   run: echo "my first Github actions job"
         
-#         # - name: move README file
-#         #   run: mv README.md > msg.txt 
+        # - name: move README file
+        #   run: mv README.md > msg.txt 
         
-#         # - name: give msg.txt permissions 
-#         #   run: chmod +x msg.txt 
+        # - name: give msg.txt permissions 
+        #   run: chmod +x msg.txt 
 
-#         # - name: list files 
-#         #   run: ls -ltr
+        # - name: list files 
+        #   run: ls -ltr
 
-#         # - name: Read files 
-#         #   run: cat "README.md"
+        # - name: Read files 
+        #   run: cat "README.md"
