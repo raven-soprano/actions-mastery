@@ -13,6 +13,13 @@ jobs:
             echo "my first Github actions job"
             ls -ltr
             cat "README.md"
+        - name: generate ASCII diagram 
+          run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
+
+        - name: permission to display file 
+          run: | 
+        #  chmod +x dragon.txt
+           cat "dragon.txt" 
 
         # - name: welcome message 
         #   run: echo "my first Github actions job"
