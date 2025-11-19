@@ -10,6 +10,7 @@ jobs:
        uses: actions/checkout@v5
 
   list_repo:
+    needs: ascii_job
     runs-on: ubuntu-latest 
     steps:
     - name: list repo files 
@@ -32,12 +33,14 @@ jobs:
     needs: list_repo 
     runs-on: ubuntu-latest 
     steps:
-     
-     - name: generate ASCII diagram 
-       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
-     - name: sleep for 10 secs
-       run: sleep 10
+    - name: sleep for 10 secs
+      run: sleep 10
+     
+    - name: generate ASCII diagram 
+      run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+
+   
    
 
     #  - name: check file exists 
