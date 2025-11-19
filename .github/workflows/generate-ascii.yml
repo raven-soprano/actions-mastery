@@ -6,8 +6,8 @@ jobs:
   ascii_job: 
     runs-on: ubuntu-latest
     steps: 
-    - name: checkout repo 
-      uses: actions/checkout@v5
+     - name: checkout repo 
+       uses: actions/checkout@v5
 
         # - name: List and Read files 
         #   run: | 
@@ -15,19 +15,19 @@ jobs:
         #     ls -ltr
         #     cat "README.md"
 
-    - name: Install Cowsay program
-      run: sudo apt-get install cowsay -y
+     - name: Install Cowsay program
+       run: sudo apt-get install cowsay -y
 
-    - name: generate ASCII diagram 
-      run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+     - name: generate ASCII diagram 
+       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
-    - name: check file exists 
-      run: grep -i "dragon" dragon.txt 
+     - name: check file exists 
+       run: grep -i "dragon" dragon.txt 
 
-    - name: permission to display file 
-      run: cat dragon.txt
+     - name: permission to display file 
+       run: cat dragon.txt
         
-    - name: list repo files 
-      run: ls -ltra
+     - name: list repo files 
+       run: ls -ltra
 
        
