@@ -8,8 +8,14 @@ jobs:
         - name: checkout repo 
           uses: actions/checkout@v5
 
-        - name: welcome message 
-          run: echo "my first Github actions job"
+        - name: List and Read files 
+          run: | 
+            echo "my first Github actions job"
+            ls -ltr
+            cat "README.md"
+
+        # - name: welcome message 
+        #   run: echo "my first Github actions job"
         
         # - name: move README file
         #   run: mv README.md > msg.txt 
@@ -17,8 +23,8 @@ jobs:
         # - name: give msg.txt permissions 
         #   run: chmod +x msg.txt 
 
-        - name: list files 
-          run: ls -ltr
+        # - name: list files 
+        #   run: ls -ltr
 
-        - name: Read files 
-          run: cat "README.md"
+        # - name: Read files 
+        #   run: cat "README.md"
