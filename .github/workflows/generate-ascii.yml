@@ -13,13 +13,14 @@ jobs:
             echo "my first Github actions job"
             ls -ltr
             cat "README.md"
+
         - name: install cowsay program
           run: sudo apt-get install cowsay -y
 
         - name: generate ASCII diagram 
-          run: cowsay -f chuck "run for cover" I am coming for you > chuck.txt 
+          run: cowsay -f alligator "run for cover" I am coming for you > alligator.txt 
 
         - name: permission to display file 
-          run: cat "chuck.txt" 
+          run: cat "alligator.txt" 
 
        
