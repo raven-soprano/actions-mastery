@@ -18,9 +18,9 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: generate ASCII diagram 
-          run: cowsay -f alligator "run for cover" I am coming for you > alligator.txt 
+          run: cowsay -f dragon "run for cover" I am coming for you > dragon.txt 
 
         - name: permission to display file 
-          run: cat "alligator.txt" 
+          run: cat "dragon".txt" 
 
        

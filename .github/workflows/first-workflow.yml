@@ -14,12 +14,12 @@ jobs:
             ls -ltr
             cat "README.md"
         - name: generate ASCII diagram 
-          run: cowsay -f alligator "run for cover" I am a dragon RAGGHHHH > alligator.txt 
+          run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
 
         - name: permission to display file 
           run: | 
         
-           cat "alligator.txt" 
+           cat "dragon.txt" 
 
         # - name: welcome message 
         #   run: echo "my first Github actions job"
