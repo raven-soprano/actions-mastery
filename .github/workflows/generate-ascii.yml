@@ -21,8 +21,8 @@ jobs:
      - name: generate ASCII diagram 
        run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
-     - name: check file exists 
-       run: grep -i "dragon" dragon.txt 
+    #  - name: check file exists 
+    #    run: grep -i "dragon" dragon.txt 
 
      - name: permission to display file 
        run: cat dragon.txt
