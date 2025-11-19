@@ -19,13 +19,13 @@ jobs:
        run: sudo apt-get install cowsay -y
 
      - name: generate ASCII diagram 
-       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+       run: cowsay -f chuck "run for cover I am coming for you" > chuck.txt 
 
     #  - name: check file exists 
     #    run: grep -i "dragon" dragon.txt 
 
      - name: permission to display file 
-       run: cat dragon.txt
+       run: cat chuck.txt
         
      - name: list repo files 
        run: ls -ltra
