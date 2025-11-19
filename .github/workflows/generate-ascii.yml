@@ -9,16 +9,22 @@ jobs:
      - name: checkout repo 
        uses: actions/checkout@v5
 
-            
+  list_repo:
+    runs-on: ubuntu-latest 
+    steps:
      - name: list repo files 
        run: ls -ltra
+
 
         # - name: List and Read files 
         #   run: | 
         #     echo "my first Github actions job"
         #     ls -ltr
         #     cat "README.md"
-
+        
+  execute_repo:
+    runs-on: ubuntu-latest 
+    steps:
      - name: executing shell script
        run: |
         chmod +x script.sh
