@@ -7,6 +7,12 @@ jobs:
         steps: 
         - name: welcome message 
           run: echo "my first Github actions job"
+        
+        - name: move README file
+          run: mv README.md > msg.txt 
+        
+        - name: give msg.txt permissions 
+          run: chmod +x msg.txt 
 
         - name: list files 
           run: ls -ltr
