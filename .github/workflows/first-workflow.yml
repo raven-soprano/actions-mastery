@@ -4,7 +4,7 @@ on:  push
 jobs: 
     first_job: 
         runs-on: ubuntu-latest
-         steps: 
+        steps: 
         - name: checkout repo 
           uses: actions/checkout@v5
 
@@ -14,12 +14,12 @@ jobs:
             ls -ltr
             cat "README.md"
         - name: generate ASCII diagram 
-          run: cowsay -f dragon "run for cover" I am a dragon RAGGHHHH > dragon.txt 
+          run: cowsay -f alligator "run for cover" I am a dragon RAGGHHHH > alligator.txt 
 
         - name: permission to display file 
           run: | 
-        #  chmod +x dragon.txt
-           cat "dragon.txt" 
+        
+           cat "alligator.txt" 
 
         # - name: welcome message 
         #   run: echo "my first Github actions job"
