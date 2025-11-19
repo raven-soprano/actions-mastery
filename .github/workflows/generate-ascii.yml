@@ -20,6 +20,9 @@ jobs:
 
     - name: install cowsay 
       run: sudo apt-get install cowsay -y 
+    
+    - name: generate ASCII diagram 
+      run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
    
 
 
@@ -35,10 +38,8 @@ jobs:
     steps:
 
     - name: sleep for 10 secs
-      run: sleep 10
-     
-    - name: generate ASCII diagram 
-      run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+      run: sleep 10x
+  
 
     - name: read file
       run: cat dragon.txt
