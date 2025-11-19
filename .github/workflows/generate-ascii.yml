@@ -2,7 +2,7 @@ name: my First workflow
 
 on:  push 
 jobs: 
-    first_job: 
+    ascii_job: 
         runs-on: ubuntu-latest
         steps: 
         - name: checkout repo 
@@ -14,13 +14,16 @@ jobs:
             ls -ltr
             cat "README.md"
 
-        - name: install cowsay program
+        - name: install Cowsay program
           run: sudo apt-get install cowsay -y
 
         - name: generate ASCII diagram 
           run: cowsay -f dragon "run for cover" I am coming for you > dragon.txt 
 
+        - name: check file exists 
+          run: grep -i "dragon" dragon.txt 
+
         - name: permission to display file 
-          run: cat "dragon".txt" 
+          run: cat dragon".txt
 
        
