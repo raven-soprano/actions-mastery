@@ -23,25 +23,15 @@ jobs:
     - name: generate ASCII diagram 
       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
-    - name: make directory 
-      run: mkdir path/to/artifact/dragon.txt
-
     - name: upload artifact 
-    #   run: mkdir -p path/to/artifact
-    # - run: echo hello > path/to/artifact/world.txt
+
       uses: actions/upload-artifact@v4
       with:
         name: my-artifact
-        path: path/to/artifact/dragon.txt
+        path: dragon.txt
    
 
 
-        # - name: List and Read files 
-        #   run: | 
-        #     echo "my first Github actions job"
-        #     ls -ltr
-        #     cat "README.md"
-        
   deploy_job:
     needs: list_repo 
     runs-on: ubuntu-latest 
@@ -51,7 +41,7 @@ jobs:
       uses: actions/download-artifact@v5
       with:
        name: dragon.txt
-       path: path/to/artifact/dragon.txt 
+       path: dragon.txt 
 
     - name: Display structure of downloaded files
       run: ls -R
