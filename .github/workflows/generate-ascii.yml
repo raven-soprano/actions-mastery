@@ -15,14 +15,21 @@ jobs:
     steps:
     - name: list repo files 
       run: ls -ltr
-    - name: sleep for 10 secs
-      run: sleep 10
+   
 
     - name: install cowsay 
       run: sudo apt-get install cowsay -y 
     
     - name: generate ASCII diagram 
       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+
+    - name: upload artifact 
+    #   run: mkdir -p path/to/artifact
+    # - run: echo hello > path/to/artifact/world.txt
+      uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: path/to/artifact/dragon.txt
    
 
 
@@ -33,16 +40,22 @@ jobs:
         #     cat "README.md"
         
   deploy_job:
-      needs: list_repo 
-      runs-on: ubuntu-latest 
-      steps:
-      - name: sleep for 10 secs
-        run: sleep 10
+    needs: list_repo 
+    runs-on: ubuntu-latest 
+    steps:
+
+    - name: Download artifacts 
+      uses: actions/download-artifact@v5
+      with:
+       name: dragon.txt
+       path: path/to/artifact/dragon.txt 
+
+    - name: Display structure of downloaded files
+      run: ls -R
   
 
-      - name: read file
-        run: |
-         cat dragon.txt
+    - name: read file
+      run: cat dragon.txt
 
    
    
