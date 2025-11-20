@@ -23,6 +23,9 @@ jobs:
     - name: generate ASCII diagram 
       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
+    - name: make directory 
+      run: mkdir path/to/artifact/dragon.txt
+
     - name: upload artifact 
     #   run: mkdir -p path/to/artifact
     # - run: echo hello > path/to/artifact/world.txt
