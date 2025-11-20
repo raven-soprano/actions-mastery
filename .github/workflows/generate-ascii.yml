@@ -27,20 +27,20 @@ jobs:
 
       uses: actions/upload-artifact@v4
       with:
-        name: dragon.txt
+        name: dragon-build
         path: dragon.txt
    
 
 
-  deploy_job:
+  test_job:
     needs: list_repo 
     runs-on: ubuntu-latest 
     steps:
 
-    - name: Download artifacts 
+    - name: test artifacts 
       uses: actions/download-artifact@v4
       with:
-       name: dragon.txt
+       name: dragon-test-file
        path: dragon.txt 
 
     - name: Display structure of downloaded files
@@ -48,7 +48,19 @@ jobs:
   
 
     - name: read file
-      run: cat dragon.txt
+      run: grep -i "dragon" dragon.txt
+
+
+  download_articact: 
+    needs: test_job 
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: download artifacts 
+      uses: actions/download-artifact@v4
+      with: 
+        name: dragon-test-file
+        path: dragon.txt 
 
    
    
