@@ -32,27 +32,27 @@ jobs:
    
 
 
-  test_job:
-    needs: list_repo 
-    runs-on: ubuntu-latest 
-    steps:
+#   test_job:
+#     needs: list_repo 
+#     runs-on: ubuntu-latest 
+#     steps:
 
-    - name: test artifacts 
-      uses: actions/download-artifact@v4
-      with:
-       name: dragon-test-file
-       path: dragon.txt 
+#     - name: test artifacts 
+#       uses: actions/download-artifact@v4
+#       with:
+#        name: dragon-test-file
+#        path: dragon.txt 
 
-    - name: Display structure of downloaded files
-      run: ls -R
+#     - name: Display structure of downloaded files
+#       run: ls -R
   
 
-    - name: read file
-      run: grep -i "dragon" dragon.txt
+#     - name: read file
+#       run: grep -i "dragon" dragon.txt
 
 
   download_articact: 
-    needs: test_job 
+    needs: list_repo 
     runs-on: ubuntu-latest
     steps:
 
