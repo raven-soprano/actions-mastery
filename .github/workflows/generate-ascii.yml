@@ -28,7 +28,7 @@ jobs:
         path: dragon.txt
     
      - name: read file 
-       run: cat dragon-build 
+       run: cat dragon.txt
    
 
 
