@@ -1,7 +1,7 @@
 name: Generate ASCII
 
 on:  
-  push 
+  push:
 jobs: 
   ascii_job: 
     runs-on: ubuntu-latest
@@ -13,20 +13,17 @@ jobs:
     needs: ascii_job
     runs-on: ubuntu-latest 
     steps:
-    - name: list repo files 
-      run: ls -ltr
    
-
-    - name: install cowsay 
-      run: sudo apt-get install cowsay -y 
+     - name: install cowsay 
+       run: sudo apt-get install cowsay -y 
     
-    - name: generate ASCII diagram 
-      run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
+     - name: generate ASCII diagram 
+       run: cowsay -f dragon "run for cover I am coming for you" > dragon.txt 
 
-    - name: upload artifact 
+     - name: upload artifact 
 
-      uses: actions/upload-artifact@v4
-      with:
+       uses: actions/upload-artifact@v4
+       with:
         name: dragon-build
         path: dragon.txt
    
