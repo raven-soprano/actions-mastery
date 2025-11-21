@@ -56,7 +56,7 @@ jobs:
     - name: download artifacts 
       uses: actions/download-artifact@v4
       with: 
-        name: dragon-test-file
+        name: dragon-build
         path: dragon.txt 
 
    
