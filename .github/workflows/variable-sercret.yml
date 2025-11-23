@@ -75,7 +75,7 @@ jobs:
         run: echo docker build -t ${{ vars.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest .
 
       - name: Docker login
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ vars.CONTAINER_REGISTRY }} \
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ vars.CONTAINER_REGISTRY }}\
         --username ${{ vars.DOCKER_USERNAME }} --password-stdin
 
         # run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
