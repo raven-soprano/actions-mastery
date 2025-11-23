@@ -68,11 +68,17 @@ jobs:
 
       runs-on: ubuntu-latest
       steps:
+      - name: checkout code 
+        run: actions/checkout@v4 
+        
       - name: Docker build
         run: echo docker build -t ${{ vars.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest .
 
       - name: Docker login
-        run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ vars.CONTAINER_REGISTRY }} \
+        --username ${{ vars.DOCKER_USERNAME }} --password-stdin
+
+        # run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Publish 
         run: echo docker push ${{ vars.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest 
@@ -81,5 +87,8 @@ jobs:
       needs: docker 
       runs-on: ubuntu-latest
       steps: 
-      - name: docker run
-        run: docker run -d -p 8080:80 ${{ vars.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest 
+
+      - name: Pull and run container 
+        run:  |
+          docker pull ${{ vars.CONTAINER_REGISTRY}}/${{ VARS.DOCKER_USERNAME}}/${{ vars.IMAGE_NAME}}: latest 
+          docker run -d -p 8080:80 ${{ vars.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:latest 
