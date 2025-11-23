@@ -65,7 +65,7 @@ on:
 env:
     CONTAINER_REGISTRY: docker.io 
     DOCKER_USERNAME: raven-soprano
-    IMAGE_NAME: github-actions-nginx
+    IMAGE_NAME: github-mastery
 
 jobs:
     docker: 
